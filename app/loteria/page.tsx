@@ -15,11 +15,14 @@ const LoteriaTablas = () => {
         <Skeleton className="w-full h-[40px]" />
       </div>
     );
-  } else {
-    if (isError) {
-      return <div>Ha ocurrido un error</div>;
-    }
   }
+  if (!data) {
+    return <div>No hay datos</div>;
+  }
+  if (isError) {
+    return <div>Ha ocurrido un error</div>;
+  }
+
   return (
     <div className=" flex flex-grow flex-wrap gap-4 justify-center">
       {data.map((tabla: any) => (
